@@ -1,0 +1,5 @@
+3) Our duck prints "I'm null", as the object's name is never set before it is retrieved. The name is never set because the field name was reused in the local scope of the method, so the program effectively sets the name parameter to itself, never touching the object field.
+
+4) There is no difference in adding the 'this' keyword in the sayHello method, as the field name is not reused as a variable name in the local scope of the method. Since there is no confusion in scope, adding the 'this' keyword makes no significant difference.
+
+5) I do not think the author made a wise decision reusing the  variable name, because it can create confusion if people are not well versed in the usage of the 'this' parameter. For code readability, I typically prefer the 2nd option of constructor, with a distinct parameter name in combination with the 'this' keyword.
