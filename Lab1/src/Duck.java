@@ -28,6 +28,7 @@ public class Duck {
     // main() tests the Duck data type
     public static void main(String[] args) {
         Duck duck = new Duck("Daffy");
+        String daffy = duck.getName();
 
         System.out.println("Our Duck's Name Is: " + duck.getName()); // Verify Duck's name using getter method
 

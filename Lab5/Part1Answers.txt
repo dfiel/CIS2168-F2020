@@ -1,0 +1,34 @@
+Exercise 1.1:
+The program does compile and run, its output is "YoYo"
+a) No, the program does not fail. The output is unchanged
+b) Yes, the program still runs. The output is unchanged
+c) Yes, after making the inner class static, the code no longer compiles because the greeting field is not also static.
+d) Yes, the program runs. The output is unchanged, it is still "YoYo"
+
+Exercise 1.2: C.  Line 4 generates a compiler error.
+
+Exercise 1.3: B.  he is 25.
+
+Exercise 2.1: This sets the 'next' reference of the x node to be the node after the current 'next' node.
+If x is node 1 from linked list 0 -> 1 -> 2 -> 3 -> 4, then the new list would be 0 -> 1 -> 3 -> 4.
+
+Exercise 2.2:
+      Node<Item> current = first.next;
+      Node<Item> offset = first;
+      Item retval;
+      if(current == null){
+         retval = first.item;
+         first = null;
+         n--;
+         return retval;
+      }
+      while(current.next != null){
+         offset = offset.next;
+         current = current.next;
+      }
+      retval = current.item;
+      offset.next = null;
+      n--;
+      return retval;
+The advantage of keeping the last pointer in a linked list implementation is it allows you to easily determine when you have reached the node directly before the last node (current.next == last).
+Otherwise, you must update two pointers while traversing through the list (as I did above) to determine when you have reached the end and update the prior node.
