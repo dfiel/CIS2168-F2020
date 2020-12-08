@@ -70,8 +70,9 @@ public class Tree<T extends Comparable<T>> {
    private void inorderHelper(TreeNode<T> node) {
       if (node == null)  return;
 
-      // DELETE THE FOLLOWING LINE AND INSERT YOUR CODE HERE
-      System.out.println("Inorder traversal is not yet implemented.");
+      inorderHelper(node.leftNode);
+      System.out.printf("%s ", node.data); // output node data
+      inorderHelper(node.rightNode);
    }
 
    // begin postorder traversal
@@ -83,8 +84,9 @@ public class Tree<T extends Comparable<T>> {
    private void postorderHelper(TreeNode<T> node) {
       if (node == null) return;
 
-      // DELETE THE FOLLOWING LINE AND INSERT YOUR CODE HERE
-      System.out.println("Inorder traversal is not yet implemented.");
+      postorderHelper(node.leftNode);
+      postorderHelper(node.rightNode);
+      System.out.printf("%s ", node.data); // output node data
    }
 
    ///////////////////////////////////////////////////////////////////
@@ -96,13 +98,29 @@ public class Tree<T extends Comparable<T>> {
 
    // get the depth of this node
    private int depth(TreeNode<T> node) {
-      // YOUR CODE HERE
-      System.out.println("Method depth() is not yet implemented.");
-      return 2168;
+      if (node == null) return 0;
+      else {
+         int leftDepth = depth(node.leftNode);
+         int rightDepth = depth(node.rightNode);
+         if (leftDepth > rightDepth) return leftDepth+1;
+         else return rightDepth+1;
+      }
    }
 
    // get depth of this tree
    public int depth() {
       return depth(this.root);
+   }
+
+   public void levelOrder() {
+      Queue<TreeNode<T>> queue = new Queue<>();
+      TreeNode<T> comp;
+      queue.enqueue(this.root);
+      while(!queue.isEmpty()){
+         comp = queue.dequeue();
+         System.out.printf("%s ", comp.data);
+         if(comp.leftNode != null) queue.enqueue(comp.leftNode);
+         if(comp.rightNode != null) queue.enqueue(comp.rightNode);
+      }
    }
 } // end class Tree

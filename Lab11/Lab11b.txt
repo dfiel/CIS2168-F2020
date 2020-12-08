@@ -1,0 +1,9 @@
+P1Q1: The Big-O runtime of the method getInversionCount() in InversionsNative is O(n^2)
+
+P2b: Insertion sort is O(n^2)
+
+P2c: On my machine, processing 100Kints.txt with Insertion sort took 0.925s, while Merge sort took 0.013s. Merge sort is faster
+
+P2d: Both insertion and merge sort are stable algorithms.
+
+P2e: Despite Merge sort having a smaller Big-O runtime than Insertion sort, there are a few scenarios where Insertion sort may be a better choice. Insertion sort is faster than merge sort on smaller datasets. Insertion sort is done in place, so it is more space efficient. With semi-sorted values, Insertion sort is faster as it skips these sorted entries.

@@ -17,9 +17,9 @@ public class DoublingTest {
          a[i] = -MAXIMUM_INTEGER + 1 + new Random().nextInt(2* MAXIMUM_INTEGER - 1) ;
       }
       long startTime = System.currentTimeMillis();
-      ThreeSum.count(a);
+      ThreeSumFast.count(a);
       long endTime = System.currentTimeMillis();
-      return (endTime - startTime)/1000;
+      return (endTime - startTime)/1000F;
    }
 
    // Prints table of running times to call ThreeSum.count()

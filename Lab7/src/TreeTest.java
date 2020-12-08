@@ -29,36 +29,41 @@ public class TreeTest
 
       System.out.printf("%n%nPostorder traversal%n");
       tree1.postorderTraversal();
+
+      System.out.printf("%n%nLevel traversal%n");
+      tree1.levelOrder();
       System.out.println();
 
-//    System.out.print("\nThe depth of this tree is ");
+      System.out.print("\nThe depth of this tree is ");
       System.out.println(tree1.depth());
 
       System.out.println("\n\n\t\t--- Test 2 --- \n");
-      System.out.println("---> Uncomment the relevant lines in the source code to run TEST 2. <---");
-//      Tree<Integer> tree2 = new Tree<Integer>();
-//      Random randomNumber = new Random(2168);
-//      System.out.println("Inserting the following values: ");
+      Tree<Integer> tree2 = new Tree<Integer>();
+      Random randomNumber = new Random(2168);
+      System.out.println("Inserting the following values: ");
 
-      // insert 10 random integers from 0-99 in tree2
-//      for (int i = 1; i <= 10; i++) {
-//         int value = randomNumber.nextInt(100);
-//         System.out.printf("%d ", value);
-//         tree2.insertNode(value);
-//      }
-//
-//      System.out.printf("%n%nPreorder traversal%n");
-//      tree2.preorderTraversal();
-//
-//      System.out.printf("%n%nInorder traversal%n");
-//      tree2.inorderTraversal();
-//
-//      System.out.printf("%n%nPostorder traversal%n");
-//      tree2.postorderTraversal();
-//      System.out.println();
+       //insert 10 random integers from 0-99 in tree2
+      for (int i = 1; i <= 10; i++) {
+         int value = randomNumber.nextInt(100);
+         System.out.printf("%d ", value);
+         tree2.insertNode(value);
+      }
 
-//      System.out.print("\nThe depth of this tree is ");
-//      System.out.println(tree2.depth());
+      System.out.printf("%n%nPreorder traversal%n");
+      tree2.preorderTraversal();
+
+      System.out.printf("%n%nInorder traversal%n");
+      tree2.inorderTraversal();
+
+      System.out.printf("%n%nPostorder traversal%n");
+      tree2.postorderTraversal();
+
+      System.out.printf("%n%nLevel traversal%n");
+      tree2.levelOrder();
+      System.out.println();
+
+      System.out.print("\nThe depth of this tree is ");
+      System.out.println(tree2.depth());
    }
 } // end class TreeTest
 
